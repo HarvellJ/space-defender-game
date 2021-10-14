@@ -1,0 +1,13 @@
+2021-10-14 17:14:25.2521|DEBUG|sent: 1634228065249;getServerVersion&
+2021-10-14 17:14:25.4565|DEBUG|response: 1.6.6
+2021-10-14 17:14:25.4565|DEBUG|sent: 1634228065458;loadScene;MainMenu;true&
+2021-10-14 17:14:25.4873|DEBUG|response: Ok
+2021-10-14 17:14:25.5781|DEBUG|response: Scene Loaded
+2021-10-14 17:14:25.5781|DEBUG|sent: 1634228065583;findActiveObjectByName;StartText;NAME;//;true&
+2021-10-14 17:14:25.6299|DEBUG|response: {"name":"StartText","id":1762,"x":1740,"y":792,"z":400,"mobileY":648,"type":"","enabled":true,"worldX":-41.2,"worldY":0.0,"worldZ":48.2,"idCamera":1804,"parentId":1798,"transformParentId":1798,"transformId":1796}
+2021-10-14 17:14:25.6473|DEBUG|sent: 1634228065647;clickElement;{"name":"StartText","id":1762,"x":1740,"y":792,"z":400,"mobileY":648,"type":"","enabled":true,"worldX":-41.2,"worldY":0.0,"worldZ":48.2,"idCamera":1804,"parentId":1798,"transformParentId":1798,"transformId":1796};1;0.1;True&
+2021-10-14 17:14:25.6473|DEBUG|response: {"name":"StartText","id":1762,"x":1740,"y":792,"z":400,"mobileY":648,"type":"","enabled":true,"worldX":-41.2,"worldY":0.0,"worldZ":48.2,"idCamera":1804,"parentId":1798,"transformParentId":1798,"transformId":1796}
+2021-10-14 17:14:25.8490|DEBUG|response: Finished
+2021-10-14 17:14:25.8511|DEBUG|sent: 1634228065850;getCurrentScene&
+2021-10-14 17:14:25.8876|DEBUG|response: {"name":"MainLevel","id":0,"x":0,"y":0,"z":0,"mobileY":0,"type":"UnityScene","enabled":true,"worldX":0.0,"worldY":0.0,"worldZ":0.0,"idCamera":0,"parentId":0,"transformParentId":0,"transformId":0}
+2021-10-14 17:14:25.8876|DEBUG|sent: 1634228065891;closeConnection&
