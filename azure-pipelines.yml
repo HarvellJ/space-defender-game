@@ -1,0 +1,21 @@
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+  displayName: "Building Game"
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '.\SpaceGameTests\SpaceGameTests\VoxelGameTests.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+  displayName: "Execute Tests"
