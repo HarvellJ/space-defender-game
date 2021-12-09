@@ -3,6 +3,9 @@ This is a simple 3D space shooting game built with Unity. The idea of the game i
 
 I created this game purely as a development project to learn from.
 
+The game contains two main scenes, the main menu:
+![Main Menu](https://user-images.githubusercontent.com/40071640/145356853-4588bbe7-1e8d-435c-97b7-50b6ffef5af2.png)
+
 ## Testing
 This project uses AltUnity to implement a simple UI test project.
 
