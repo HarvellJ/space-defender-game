@@ -9,6 +9,8 @@ The game contains two main scenes.
 ![Main Menu](https://user-images.githubusercontent.com/40071640/145356853-4588bbe7-1e8d-435c-97b7-50b6ffef5af2.png)
 
 ### The game:
+![image](https://user-images.githubusercontent.com/40071640/145358506-3f6d9488-612f-4dfb-b4d9-1e1c444895ff.png)
+
 ![image](https://user-images.githubusercontent.com/40071640/145358184-1750a2d2-30bf-40da-89b9-6cfbc654ec5e.png)
 
 ## Testing
