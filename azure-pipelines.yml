@@ -19,7 +19,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: 'echo build job' 
+        script: echo variables['build.sourceBranch'] 
       displayName: "Building Game"
 
 - stage: 'dev'
