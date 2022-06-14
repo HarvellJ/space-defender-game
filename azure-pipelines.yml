@@ -24,7 +24,7 @@ stages:
 
 - stage: 'dev'
   dependsOn: 'Build'
-  condition:  eq(variables['build.sourceBranch'], 'master')
+  condition:  eq(variables['Build.SourceBranch'], 'master')
   displayName: 'Build dev stage'
   jobs:
   - job: 'Build'
