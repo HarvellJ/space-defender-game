@@ -7,15 +7,51 @@ trigger:
 pool:
   name: Default
 
-steps:
-- task: CmdLine@2
-  inputs:
-    script: |
-      "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
-  displayName: "Building Game"
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: '.\SpaceGameTests\SpaceGameTests\SpaceGameTests.csproj'
-    arguments: '--configuration $(buildConfiguration)'
-  displayName: "Execute Tests"
+stages:
+- stage: 'Build'
+  displayName: 'Build the application'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+      displayName: "Building Game"
+
+- stage: 'dev'
+  displayName: 'Build dev stage'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+      displayName: "Building Game"
+
+- stage: 'int'
+  displayName: 'Build int stage'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+      displayName: "Building Game"
+
+- stage: 'stg'
+  displayName: 'Build stg stage'
+  jobs:
+  - job: 'Build'
+    displayName: 'Build job'
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+      displayName: "Building Game"
