@@ -20,6 +20,7 @@ stages:
       displayName: "Building Game"
 
 - stage: 'dev'
+  dependsOn: 'Build'
   displayName: 'Build dev stage'
   jobs:
   - job: 'Build'
@@ -31,6 +32,7 @@ stages:
       displayName: "Building Game"
 
 - stage: 'int'
+  dependsOn: 'Build'
   displayName: 'Build int stage'
   jobs:
   - job: 'Build'
@@ -42,6 +44,7 @@ stages:
       displayName: "Building Game"
 
 - stage: 'stg'
+  dependsOn: 'Build'
   displayName: 'Build stg stage'
   jobs:
   - job: 'Build'
