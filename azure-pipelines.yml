@@ -24,7 +24,6 @@ stages:
 
 - stage: 'dev'
   dependsOn: 'Build'
-  condition:  eq(variables['Build.SourceBranch'], 'master')
   displayName: 'Build dev stage'
   jobs:
   - deployment: 'dev'
@@ -38,11 +37,11 @@ stages:
 
 - stage: 'int'
   dependsOn: 'Build'
-  displayName: 'Build dev stage'
+  displayName: 'Build int stage'
   jobs:
   - deployment: 'dev'
     displayName: 'Build job'
-    environment: 'dev'
+    environment: 'int'
     strategy:
       runOnce:
         deploy:
@@ -51,11 +50,11 @@ stages:
 
 - stage: 'stg'
   dependsOn: 'Build'
-  displayName: 'Build dev stage'
+  displayName: 'Build stg stage'
   jobs:
-  - deployment: 'dev'
+  - deployment: 'stg'
     displayName: 'Build job'
-    environment: 'dev'
+    environment: 'stg'
     strategy:
       runOnce:
         deploy:
