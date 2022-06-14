@@ -27,39 +27,37 @@ stages:
   condition:  eq(variables['Build.SourceBranch'], 'master')
   displayName: 'Build dev stage'
   jobs:
-  - job: 'Build'
-      environment: dev
+  - deployment: 'dev'
     displayName: 'Build job'
-    steps:
-    - task: CmdLine@2
-      inputs:
-        script: echo $(devBranch) 
-      displayName: "Building Game"
+    environment: 'dev'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: 'echo deploying dev...'
 
 - stage: 'int'
   dependsOn: 'Build'
-  condition:  eq(variables['build.sourceBranch'], variables.EnvVersions.intBranch)
-  displayName: 'Build int stage'
+  displayName: 'Build dev stage'
   jobs:
-  - job: 'Build'
-      environment: int
+  - deployment: 'dev'
     displayName: 'Build job'
-    steps:
-    - task: CmdLine@2
-      inputs:
-        script: 'echo int job' 
-      displayName: "Building Game"
+    environment: 'dev'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: 'echo deploying int...'
 
 - stage: 'stg'
   dependsOn: 'Build'
-  condition:  eq(variables['build.sourceBranch'],  variables.EnvVersions.stgBranch)
-  displayName: 'Build stg stage'
+  displayName: 'Build dev stage'
   jobs:
-  - job: 'Build'
-      environment: dev
+  - deployment: 'dev'
     displayName: 'Build job'
-    steps:
-    - task: CmdLine@2
-      inputs:
-        script: 'echo stg job' 
-      displayName: "Building Game"
+    environment: 'dev'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: 'echo deploying stg...'
