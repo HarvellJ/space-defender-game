@@ -32,7 +32,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: 'echo $(devBranch)' 
+        script: echo $(devBranch) 
       displayName: "Building Game"
 
 - stage: 'int'
