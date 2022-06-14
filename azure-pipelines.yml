@@ -16,8 +16,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: |
-          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+        script: 'echo build job' 
       displayName: "Building Game"
 
 - stage: 'dev'
@@ -28,8 +27,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: |
-          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+        script: 'echo dev job' 
       displayName: "Building Game"
 
 - stage: 'int'
@@ -40,8 +38,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: |
-          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+        script: 'echo int job' 
       displayName: "Building Game"
 
 - stage: 'stg'
@@ -52,6 +49,5 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: |
-          "C:\Program Files\Unity\Hub\Editor\2020.2.0b14\Editor\Unity.exe" -quit -batchmode -projectPath ".\Game" -executeMethod CustomBuild.BuildAndRun
+        script: 'echo stg job' 
       displayName: "Building Game"
