@@ -7,6 +7,9 @@ trigger:
 pool:
  vmImage: 'ubuntu-20.04'
 
+variables:
+- group: EnvVersions
+
 stages:
 - stage: 'Build'
   displayName: 'Build the application'
@@ -21,6 +24,7 @@ stages:
 
 - stage: 'dev'
   dependsOn: 'Build'
+  condition:  eq(variables['build.sourceBranch'], 'master')
   displayName: 'Build dev stage'
   jobs:
   - job: 'Build'
@@ -28,11 +32,12 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: 'echo dev job' 
+        script: 'echo $(devBranch)' 
       displayName: "Building Game"
 
 - stage: 'int'
   dependsOn: 'Build'
+  condition:  eq(variables['build.sourceBranch'], $(intBranch))
   displayName: 'Build int stage'
   jobs:
   - job: 'Build'
@@ -45,6 +50,7 @@ stages:
 
 - stage: 'stg'
   dependsOn: 'Build'
+  condition:  eq(variables['build.sourceBranch'], $(stgBranch))
   displayName: 'Build stg stage'
   jobs:
   - job: 'Build'
